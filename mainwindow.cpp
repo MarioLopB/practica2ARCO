@@ -18,12 +18,6 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_lineEdit_returnPressed()
-{
-
-}
-
-
 void MainWindow::on_pushButton_clicked()
 {
     QString matricula;
