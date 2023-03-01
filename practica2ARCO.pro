@@ -9,13 +9,22 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    bicicleta.cpp \
+    garaje.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    manager.cpp \
+    vehiculos.cpp
 
 HEADERS += \
-    mainwindow.h
+    bicicleta.h \
+    garaje.h \
+    mainwindow.h \
+    manager.h \
+    vehiculos.h
 
 FORMS += \
+    garaje.ui \
     mainwindow.ui
 
 # Default rules for deployment.

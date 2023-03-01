@@ -129,7 +129,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="Nombre"/>
        </item>
        <item>
         <widget class="QComboBox" name="comboBox">
@@ -295,7 +295,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_15">
+          <widget class="QLabel" name="MatriculaLB">
            <property name="text">
             <string>TextLabel</string>
            </property>
