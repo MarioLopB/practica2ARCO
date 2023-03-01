@@ -10,11 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    this->manager = new Manager();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+
 }
 
 
@@ -32,5 +35,11 @@ void MainWindow::on_pushButton_clicked()
     }
 
     ui->MatriculaLB->setText(matricula);
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    this->manager
 }
 
