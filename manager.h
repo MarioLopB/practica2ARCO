@@ -3,6 +3,8 @@
 
 #include "vehiculos.h"
 
+#include <QString>
+
 #include <vector>
 #include <iostream>
 
@@ -14,7 +16,7 @@ public:
     Manager();
     ~Manager();
 
-    void setTipo(string nombre, string tipo_combustible, string color, string kit, string matricula, int ruedas, int potencia, int vagones, bool motor, bool combustible, bool alas, bool reactores, bool tren_aterrizaje, bool locomotora);
+    void setTipo(QString nombre, QString tipo_combustible, QString color, QString kit, QString matricula, int ruedas, int potencia, int vagones, int motor, int combustible, int alas, int reactores, int tren_aterrizaje, int locomotora);
 };
 
 #endif // MANAGER_H

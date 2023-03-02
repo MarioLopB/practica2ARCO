@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    this->manager = new Manager();
+    this->manager = Manager();
 }
 
 MainWindow::~MainWindow()
@@ -40,6 +40,6 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    this->manager
+    this->manager.setTipo(ui->NombreI->text(), ui->TipoCombuI->currentText(), ui->ColorI->currentText(), ui->KitI->currentText(), ui->MatriculaLB->text(), ui->RuedasI->currentText().toInt(), ui->PotenciaI->value(), ui->VagonesI->value(), ui->MotorI->checkState(), ui->CombustibleI->checkState(), ui->ALasI->checkState(), ui->ReactoresI->checkState(), ui->TrenAteI->checkState(), ui->LocomotorI->checkState());
 }
 
