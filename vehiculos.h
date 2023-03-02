@@ -1,6 +1,7 @@
 #ifndef VEHICULOS_H
 #define VEHICULOS_H
 
+#include <QString>
 #include <iostream>
 
 using namespace std;
@@ -10,26 +11,13 @@ class Vehiculos
 public:
     Vehiculos();
 
-    Vehiculos(string Nombre, string color, int ruedas);
+    Vehiculos(QString clase, QString nombre, QString tipo_combustible, QString color, QString kit, QString matricula, int ruedas, int potencia, int vagones, int motor, int combustible, int alas, int reactores, int tren_aterrizaje, int locomotora);
 
     ~Vehiculos(void);
 
-    void setNombre(string Nombre);
-
-    void setColor(string color);
-
-    void setRuedas(int ruedas);
-
-    string getNombre();
-
-    string getMatricula();
-
-    string getColor();
-
-    int getRuedas();
 private:
-    string Nombre, matricula, color;
-    int ruedas;
+    QString clase, nombre, tipo_combustible, color, kit, matricula;
+    int ruedas, potencia, vagones, motor, combustible, alas, reactores, tren_aterrizaje, locomotora;
 };
 
 #endif // VEHICULOS_H

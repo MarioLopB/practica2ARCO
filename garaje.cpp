@@ -2,7 +2,7 @@
 #include "ui_garaje.h"
 
 Garaje::Garaje(QWidget *parent) :
-    QWidget(parent),
+    QDialog(parent),
     ui(new Ui::Garaje)
 {
     ui->setupUi(this);

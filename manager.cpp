@@ -1,6 +1,7 @@
 #include "manager.h"
 
 #include <QString>
+#include <QMessageBox>
 
 #include <iostream>
 
@@ -13,8 +14,9 @@ Manager::Manager()
 
 Manager::~Manager(){}
 
-void Manager::setTipo(QString nombre, QString tipo_combustible, QString color, QString kit, QString matricula, int ruedas, int potencia, int vagones, int motor, int combustible, int alas, int reactores, int tren_aterrizaje, int locomotora){
-    string tipo;
+bool Manager::addVehiculo(QString nombre, QString tipo_combustible, QString color, QString kit, QString matricula, int ruedas, int potencia, int vagones, int motor, int combustible, int alas, int reactores, int tren_aterrizaje, int locomotora){
+    QString tipo;
+    bool ok = true;
 
     if(ruedas == 2 && motor != 2 && combustible != 2 && reactores != 2
             && alas != 2&& tren_aterrizaje != 2 && locomotora != 2 && vagones == 0
@@ -52,9 +54,21 @@ void Manager::setTipo(QString nombre, QString tipo_combustible, QString color, Q
         tipo = "Tren";
     } else {
         cout << "No existe" << endl;
+        ok = false;
     }
 
-    cout << nombre.toStdString() << " " << matricula.toStdString() << " " << tipo << endl;
+    if(ok){
+        Vehiculos *v = new Vehiculos("bicicleta", nombre, tipo_combustible, color, kit, matricula, ruedas, potencia, vagones, motor, combustible, alas, reactores, tren_aterrizaje, locomotora);
+        vehiculos.push_back(*v);
+    } else{
+        QMessageBox error;
+        error.critical(0, "ERROR", "La información introducida no coincide con ningún vehículo");
+        error.setFixedSize(500, 200);
+    }
+
+    cout << nombre.toStdString() << " " << matricula.toStdString() << " " << tipo.toStdString() << endl;
+
+    return ok;
 }
 
 void Manager::Hola(QString nombre){

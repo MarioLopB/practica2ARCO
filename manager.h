@@ -12,11 +12,13 @@ using namespace std;
 
 class Manager
 {
+private:
+    vector<Vehiculos> vehiculos;
 public:
     Manager();
     ~Manager();
 
-    void setTipo(QString nombre, QString tipo_combustible, QString color, QString kit, QString matricula, int ruedas, int potencia, int vagones, int motor, int combustible, int alas, int reactores, int tren_aterrizaje, int locomotora);
+    bool addVehiculo(QString nombre, QString tipo_combustible, QString color, QString kit, QString matricula, int ruedas, int potencia, int vagones, int motor, int combustible, int alas, int reactores, int tren_aterrizaje, int locomotora);
 
     void Hola(QString nombre);
 };

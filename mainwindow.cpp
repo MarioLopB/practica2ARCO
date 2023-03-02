@@ -4,6 +4,7 @@
 #include <QString>
 
 #include "manager.h"
+#include "garaje.h"
 
 #include <iostream>
 
@@ -33,14 +34,14 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     QString matricula;
-    vector alfabeto = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+    vector alfabeto = {"C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"};
 
     for(int i = 0; i < 4; i++){
         matricula.append(QString("%1").arg(rand()%(0-9)));
     }
 
     for(int i = 0; i < 3; i++){
-        matricula.append(alfabeto[rand()%25]);
+        matricula.append(alfabeto[rand()%20]);
     }
 
     ui->MatriculaLB->setText(matricula);
@@ -64,7 +65,7 @@ void MainWindow::on_pushButton_2_clicked()
   int tren_aterrizaje = ui->TrenAteI->checkState();
   int locomotora = ui->LocomotorI->checkState();
 
-  manager->setTipo(nombre, tipo_combustible, color, kit, matricula, ruedas, potencia, vagones, motor, combustible, alas, reactores, tren_aterrizaje, locomotora);
+  manager->addVehiculo(nombre, tipo_combustible, color, kit, matricula, ruedas, potencia, vagones, motor, combustible, alas, reactores, tren_aterrizaje, locomotora);
 }
 
 
@@ -86,5 +87,12 @@ void MainWindow::on_CombustibleI_stateChanged(int arg1)
     } else{
         ui->TipoCombuI->setEnabled(false);
     }
+}
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    garaje = new Garaje(this);
+    garaje->show();
 }
 

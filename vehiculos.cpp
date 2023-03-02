@@ -1,5 +1,6 @@
 #include "vehiculos.h"
 
+#include <QString>
 #include <vector>
 #include <time.h>
 #include <iostream>
@@ -11,39 +12,23 @@ Vehiculos::Vehiculos()
 
 }
 
-Vehiculos::Vehiculos(string Nombre, string color, int ruedas)
+Vehiculos::Vehiculos(QString clase, QString nombre, QString tipo_combustible, QString color, QString kit, QString matricula, int ruedas, int potencia, int vagones, int motor, int combustible, int alas, int reactores, int tren_aterrizaje, int locomotora)
 {
-    this->Nombre = Nombre;
+    this->clase = clase;
+    this->nombre = nombre;
+    this->tipo_combustible = tipo_combustible;
     this->color = color;
+    this->kit = kit;
+    this->matricula = matricula;
     this->ruedas = ruedas;
+    this->potencia = potencia;
+    this->vagones = vagones;
+    this->motor = motor;
+    this->combustible = combustible;
+    this->alas = alas;
+    this->reactores = reactores;
+    this->tren_aterrizaje = tren_aterrizaje;
+    this->locomotora = locomotora;
 }
 
 Vehiculos::~Vehiculos(){}
-
-void Vehiculos::setNombre(string Nombre){
-    this->Nombre = Nombre;
-}
-
-void Vehiculos::setColor(string color){
-    this->color = color;
-}
-
-void Vehiculos::setRuedas(int ruedas){
-    this->ruedas = ruedas;
-}
-
-string Vehiculos::getNombre(){
-    return this->Nombre;
-}
-
-string Vehiculos::getMatricula(){
-    return this->matricula;
-}
-
-string Vehiculos::getColor(){
-    return this->color;
-}
-
-int Vehiculos::getRuedas(){
-    return this->ruedas;
-}

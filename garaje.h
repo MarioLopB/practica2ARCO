@@ -1,13 +1,13 @@
 #ifndef GARAJE_H
 #define GARAJE_H
 
-#include <QWidget>
+#include <QDialog>
 
 namespace Ui {
 class Garaje;
 }
 
-class Garaje : public QWidget
+class Garaje : public QDialog
 {
     Q_OBJECT
 

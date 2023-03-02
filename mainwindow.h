@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 #include "manager.h"
+#include "garaje.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,9 +27,12 @@ private slots:
 
     void on_CombustibleI_stateChanged(int arg1);
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     Manager *manager;
+    Garaje *garaje;
 };
 #endif // MAINWINDOW_H
