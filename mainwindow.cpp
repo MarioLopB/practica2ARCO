@@ -1,6 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QString>
+
+#include "manager.h"
+
 #include <iostream>
 
 using namespace std;
@@ -11,7 +15,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    this->manager = Manager();
+    manager = new Manager();
+
+    ui->PotenciaI->setText("0");
+    ui->VagonesI->setText("0");
+    ui->PotenciaI->setEnabled(false);
+    ui->TipoCombuI->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -40,6 +49,42 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    this->manager.setTipo(ui->NombreI->text(), ui->TipoCombuI->currentText(), ui->ColorI->currentText(), ui->KitI->currentText(), ui->MatriculaLB->text(), ui->RuedasI->currentText().toInt(), ui->PotenciaI->value(), ui->VagonesI->value(), ui->MotorI->checkState(), ui->CombustibleI->checkState(), ui->ALasI->checkState(), ui->ReactoresI->checkState(), ui->TrenAteI->checkState(), ui->LocomotorI->checkState());
+  QString nombre = ui->NombreI->text();
+  QString tipo_combustible = ui->TipoCombuI->currentText();
+  QString color = ui->ColorI->currentText();
+  QString kit = ui->KitI->currentText();
+  QString matricula = ui->MatriculaLB->text();
+  int ruedas = ui->RuedasI->currentText().toInt();
+  int potencia = ui->PotenciaI->text().toInt();
+  int vagones = ui->VagonesI->text().toInt();
+  int motor = ui->MotorI->checkState();
+  int combustible = ui->CombustibleI->checkState();
+  int alas = ui->ALasI->checkState();
+  int reactores = ui->ReactoresI->checkState();
+  int tren_aterrizaje = ui->TrenAteI->checkState();
+  int locomotora = ui->LocomotorI->checkState();
+
+  manager->setTipo(nombre, tipo_combustible, color, kit, matricula, ruedas, potencia, vagones, motor, combustible, alas, reactores, tren_aterrizaje, locomotora);
+}
+
+
+void MainWindow::on_MotorI_stateChanged(int arg1)
+{
+    if(arg1 == 2){
+        ui->PotenciaI->setEnabled(true);
+    } else{
+        ui->PotenciaI->setText("0");
+        ui->PotenciaI->setEnabled(false);
+    }
+}
+
+
+void MainWindow::on_CombustibleI_stateChanged(int arg1)
+{
+    if(arg1 == 2){
+        ui->TipoCombuI->setEnabled(true);
+    } else{
+        ui->TipoCombuI->setEnabled(false);
+    }
 }
 

@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include <manager.h>
+#include "manager.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,9 +22,13 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_MotorI_stateChanged(int arg1);
+
+    void on_CombustibleI_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
 
-    Manager manager;
+    Manager *manager;
 };
 #endif // MAINWINDOW_H

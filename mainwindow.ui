@@ -99,7 +99,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="PotenciaI"/>
+         <widget class="QLineEdit" name="PotenciaI"/>
         </item>
        </layout>
       </item>
@@ -288,7 +288,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="VagonesI"/>
+         <widget class="QLineEdit" name="VagonesI"/>
         </item>
        </layout>
       </item>
