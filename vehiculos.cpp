@@ -31,4 +31,64 @@ Vehiculos::Vehiculos(QString clase, QString nombre, QString tipo_combustible, QS
     this->locomotora = locomotora;
 }
 
+QString Vehiculos::getClase(){
+    return this->clase;
+}
+
+QString Vehiculos::getNombre(){
+    return this->nombre;
+}
+
+QString Vehiculos::getTipoCombustible(){
+    return this->tipo_combustible;
+}
+
+QString Vehiculos::getColor(){
+    return this->color;
+}
+
+QString Vehiculos::getKit(){
+    return this->kit;
+}
+
+QString Vehiculos::getMatricula(){
+    return this->matricula;
+}
+
+int Vehiculos::getRuedas(){
+    return this->ruedas;
+}
+
+int Vehiculos::getPotencia(){
+    return this->potencia;
+}
+
+int Vehiculos::getVagones(){
+    return this->vagones;
+}
+
+int Vehiculos::getMotor(){
+    return this->motor;
+}
+
+int Vehiculos::getCombustible(){
+    return this->combustible;
+}
+
+int Vehiculos::getAlas(){
+    return this->alas;
+}
+
+int Vehiculos::getReactores(){
+    return this->reactores;
+}
+
+int Vehiculos::getTrenAterrizaje(){
+   return this->tren_aterrizaje;
+}
+
+int Vehiculos::getLocomotora(){
+    return this->locomotora;
+}
+
 Vehiculos::~Vehiculos(){}

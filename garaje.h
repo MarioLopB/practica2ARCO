@@ -2,6 +2,9 @@
 #define GARAJE_H
 
 #include <QDialog>
+#include <vector>
+
+#include "vehiculos.h"
 
 namespace Ui {
 class Garaje;
@@ -14,6 +17,8 @@ class Garaje : public QDialog
 public:
     explicit Garaje(QWidget *parent = nullptr);
     ~Garaje();
+
+    void addVehiculo(vector<Vehiculos> vehiculos);
 
 private:
     Ui::Garaje *ui;
