@@ -1,6 +1,8 @@
 #include "garaje.h"
 #include "ui_garaje.h"
 
+#include <QTextEdit>
+
 #include "vehiculos.h"
 
 #include <vector>
@@ -19,6 +21,10 @@ Garaje::~Garaje()
 
 void Garaje::addVehiculo(vector<Vehiculos> vehiculos){
     for(auto v: vehiculos){
-
+        QTextEdit *nave = new QTextEdit;
+        QString texto = "Nombre: " + v.getNombre();
+        nave->setText(texto);
+        ui->verticalLayout->addWidget(nave);
+        nave->show();
     }
 }

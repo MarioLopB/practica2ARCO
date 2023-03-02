@@ -93,6 +93,7 @@ void MainWindow::on_CombustibleI_stateChanged(int arg1)
 void MainWindow::on_pushButton_3_clicked()
 {
     garaje = new Garaje(this);
+    garaje->addVehiculo(manager->getVehiculos());
     garaje->show();
 }
 

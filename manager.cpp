@@ -71,6 +71,10 @@ bool Manager::addVehiculo(QString nombre, QString tipo_combustible, QString colo
     return ok;
 }
 
+vector<Vehiculos> Manager::getVehiculos(){
+    return this->vehiculos;
+}
+
 void Manager::Hola(QString nombre){
     cout << "Hola " << nombre.toStdString() << endl;
 }
