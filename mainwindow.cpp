@@ -65,7 +65,20 @@ void MainWindow::on_pushButton_2_clicked()
   int tren_aterrizaje = ui->TrenAteI->checkState();
   int locomotora = ui->LocomotorI->checkState();
 
-  manager->addVehiculo(nombre, tipo_combustible, color, kit, matricula, ruedas, potencia, vagones, motor, combustible, alas, reactores, tren_aterrizaje, locomotora);
+  bool añadido = manager->addVehiculo(nombre, tipo_combustible, color, kit, matricula, ruedas, potencia, vagones, motor, combustible, alas, reactores, tren_aterrizaje, locomotora);
+
+  if(añadido){
+      ui->NombreI->clear();
+      ui->MatriculaLB->clear();
+      ui->PotenciaI->setText("0");
+      ui->VagonesI->setText("0");
+      ui->MotorI->setChecked(false);
+      ui->CombustibleI->setChecked(false);
+      ui->ALasI->setChecked(false);
+      ui->ReactoresI->setChecked(false);
+      ui->TrenAteI->setChecked(false);
+      ui->LocomotorI->setChecked(false);
+  }
 }
 
 

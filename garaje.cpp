@@ -24,6 +24,7 @@ void Garaje::addVehiculo(vector<Vehiculos> vehiculos){
         QTextEdit *nave = new QTextEdit;
         QString texto = "Nombre: " + v.getNombre();
         nave->setText(texto);
+        nave->setEnabled(false);
         ui->verticalLayout->addWidget(nave);
         nave->show();
     }

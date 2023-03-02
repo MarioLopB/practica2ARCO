@@ -15,7 +15,7 @@ Manager::Manager()
 Manager::~Manager(){}
 
 bool Manager::addVehiculo(QString nombre, QString tipo_combustible, QString color, QString kit, QString matricula, int ruedas, int potencia, int vagones, int motor, int combustible, int alas, int reactores, int tren_aterrizaje, int locomotora){
-    QString tipo;
+    QString tipo, terror;
     bool ok = true;
 
     if(ruedas == 2 && motor != 2 && combustible != 2 && reactores != 2
@@ -57,12 +57,29 @@ bool Manager::addVehiculo(QString nombre, QString tipo_combustible, QString colo
         ok = false;
     }
 
+    if(nombre == ""){
+        ok = false;
+        terror = "El vehículo necesita un nombre";
+    } else if(matricula == ""){
+        ok = false;
+        terror = "El vehículo necesita una matrícula";
+    } else if(existeMatricula(matricula)){
+        ok = false;
+        terror = "La matrícula ya existe";
+    } else if(!ok){
+        terror = "La información introducida no coincide con ningún vehículo";
+    }
+
     if(ok){
-        Vehiculos *v = new Vehiculos("bicicleta", nombre, tipo_combustible, color, kit, matricula, ruedas, potencia, vagones, motor, combustible, alas, reactores, tren_aterrizaje, locomotora);
+        Vehiculos *v = new Vehiculos(tipo, nombre, tipo_combustible, color, kit, matricula, ruedas, potencia, vagones, motor, combustible, alas, reactores, tren_aterrizaje, locomotora);
         vehiculos.push_back(*v);
+
+        QMessageBox info;
+        info.information(0, "AVISO", "Se ha añadido un vehículo: " + tipo);
+        info.setFixedSize(500, 200);
     } else{
         QMessageBox error;
-        error.critical(0, "ERROR", "La información introducida no coincide con ningún vehículo");
+        error.critical(0, "ERROR", terror);
         error.setFixedSize(500, 200);
     }
 
@@ -73,6 +90,16 @@ bool Manager::addVehiculo(QString nombre, QString tipo_combustible, QString colo
 
 vector<Vehiculos> Manager::getVehiculos(){
     return this->vehiculos;
+}
+
+bool Manager::existeMatricula(QString matricula){
+    for(auto v: vehiculos){
+        if(v.getMatricula() == matricula){
+            return true;
+        }
+    }
+
+    return false;
 }
 
 void Manager::Hola(QString nombre){

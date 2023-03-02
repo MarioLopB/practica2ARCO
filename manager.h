@@ -22,6 +22,8 @@ public:
 
     vector<Vehiculos> getVehiculos();
 
+    bool existeMatricula(QString matricula);
+
     void Hola(QString nombre);
 };
 
