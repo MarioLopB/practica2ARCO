@@ -21,9 +21,9 @@ bool Manager::addVehiculo(QString nombre, QString tipo_combustible, QString colo
     if(ruedas == 2 && motor != 2 && combustible != 2 && reactores != 2
             && alas != 2&& tren_aterrizaje != 2 && locomotora != 2 && vagones == 0
             && kit == "Kit de reparación de pinchazos"){
-        tipo = "bicicleta";
+        tipo = "Bicicleta";
     } else if(ruedas == 3 && motor != 2 && combustible != 2 && reactores != 2 && tren_aterrizaje != 2 && locomotora != 2 && vagones == 0 && kit == "Kit de reparación de pinchazos"){
-        tipo = "triciclo";
+        tipo = "Triciclo";
     } else if(ruedas == 2 && motor && potencia >= 80 && potencia <= 450 &&
               (tipo_combustible == "Eléctrico" || tipo_combustible == "Gasolina"
                || tipo_combustible == "Diésel" || tipo_combustible == "Híbrido")
