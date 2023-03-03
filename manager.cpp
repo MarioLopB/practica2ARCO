@@ -98,7 +98,3 @@ bool Manager::existeMatricula(QString matricula){
 
     return false;
 }
-
-void Manager::Hola(QString nombre){
-    cout << "Hola " << nombre.toStdString() << endl;
-}
