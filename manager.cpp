@@ -53,7 +53,6 @@ bool Manager::addVehiculo(QString nombre, QString tipo_combustible, QString colo
               && kit == "Rueda de repuesto"){
         tipo = "Tren";
     } else {
-        cout << "No existe" << endl;
         ok = false;
     }
 
@@ -82,8 +81,6 @@ bool Manager::addVehiculo(QString nombre, QString tipo_combustible, QString colo
         error.critical(0, "ERROR", terror);
         error.setFixedSize(500, 200);
     }
-
-    cout << nombre.toStdString() << " " << matricula.toStdString() << " " << tipo.toStdString() << endl;
 
     return ok;
 }

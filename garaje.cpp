@@ -20,8 +20,9 @@ Garaje::~Garaje()
 }
 
 void Garaje::addVehiculo(vector<Vehiculos> vehiculos){
+    bool adv = true;
     for(auto v: vehiculos){
-        QString motor, alas, reactores, tren_aterrizaje, locomotora;
+        QString motor, alas, reactores, tren_aterrizaje, locomotora, background, text;
         if(v.getMotor() == 2){
             motor = "SI | Potencia: " + QString().setNum(v.getPotencia());
         } else{
@@ -53,16 +54,25 @@ void Garaje::addVehiculo(vector<Vehiculos> vehiculos){
         }
 
 
-        cout << QString().arg(v.getRuedas()).toStdString() << endl;
-
         QLabel *nave = new QLabel;
         QString texto = "Nombre: " + v.getNombre() + " | Matricula: " + v.getMatricula() + " | Clase: " + v.getClase()
                 + "\nNúmero de ruedas: " + QString().setNum(v.getRuedas()) + " | Motor: " + motor + " | Color: " + v.getColor()
                 + "\nAlas: " + alas + " | Reactores: " + reactores + " | Tren de aterrizaje: " + tren_aterrizaje
-                + "\nLocomotora: " + locomotora + " | Vagones: " + QString().setNum(v.getVagones()) + " | " + v.getKit();
+                + "\nLocomotora: " + locomotora + " | Vagones: " + QString().setNum(v.getVagones())
+                + "\n" + v.getKit();
 
+        if(adv){
+            text = "black";
+            background = "#51e2f5";
+            adv = false;
+        } else{
+            text = "white";
+            background = "#101357";
+            adv = true;
+        }
+        nave->setStyleSheet("QLabel { background-color :" + background + "; color : " + text + "; font-weight: bold; font-family: Serif, Helvetica, sans-serif; border-color: #091f36; padding: 8px}");
         nave->setText(texto);
-        ui->verticalLayout->addWidget(nave);
+        ui->verticalLayout_3->addWidget(nave);
         nave->show();
     }
 }

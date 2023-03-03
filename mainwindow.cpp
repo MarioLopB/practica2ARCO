@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 
 #include <QString>
+#include <QMessageBox>
 
 #include "manager.h"
 #include "garaje.h"
@@ -105,8 +106,14 @@ void MainWindow::on_CombustibleI_stateChanged(int arg1)
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    garaje = new Garaje(this);
-    garaje->addVehiculo(manager->getVehiculos());
-    garaje->show();
+    if(manager->getVehiculos().size() == 0){
+        QMessageBox info;
+        info.information(0, "AVISO", "No hay vehiculos almacenados");
+        info.setFixedSize(500, 200);
+    } else{
+        garaje = new Garaje(this);
+        garaje->addVehiculo(manager->getVehiculos());
+        garaje->show();
+    }
 }
 
