@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->VagonesI->setText("0");
     ui->PotenciaI->setEnabled(false);
     ui->TipoCombuI->setEnabled(false);
+
 }
 
 MainWindow::~MainWindow()
@@ -79,6 +80,7 @@ void MainWindow::on_pushButton_2_clicked()
       ui->ReactoresI->setChecked(false);
       ui->TrenAteI->setChecked(false);
       ui->LocomotorI->setChecked(false);
+      ui->NVehiculos->setText("Nº de vehiculos: " + QString().setNum(manager->getVehiculos().size()));
   }
 }
 

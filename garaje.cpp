@@ -70,7 +70,7 @@ void Garaje::addVehiculo(vector<Vehiculos> vehiculos){
             background = "#101357";
             adv = true;
         }
-        nave->setStyleSheet("QLabel { background-color :" + background + "; color : " + text + "; font-weight: bold; font-family: Serif, Helvetica, sans-serif; border-color: #091f36; padding: 8px}");
+        nave->setStyleSheet("QLabel { background-color :" + background + "; color : " + text + "; font-weight: bold; font-family: Serif, Helvetica, sans-serif; border-color: #091f36; border-width: 5px; border-style: solid; border-radius: 20px; padding: 8px}");
         nave->setText(texto);
         ui->verticalLayout_3->addWidget(nave);
         nave->show();
